@@ -1,33 +1,23 @@
-# Ninh Chí Hướng _ B20DCAT094
 import socket
-import hashlib
 
-key = "mysecretkey"
+HOST = "127.0.0.1" #loppback
+SERVER_PORT = 65432
+FORMAT = "utf8"
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-# Khởi tạo server socket
-s = socket.socket()
-host = socket.gethostname()
-port = 12345
-s.bind((host, port))
-
-# Chờ kết nối từ client
+s.bind((HOST,SERVER_PORT))
 s.listen(1)
+
 conn, addr = s.accept()
 
-# Nhận thông điệp và mã băm từ client
-data = conn.recv(1024)
-received_message = data[:-16]  # Lấy thông điệp từ phần đầu của dữ liệu nhận được
-received_hash = data[-16:]    # Lấy mã băm từ phần cuối của dữ liệu nhận được
-
-# Kiểm tra tính toàn vẹn của thông điệp
-key_bytes = key.encode()
-hash_object = hashlib.md5(received_message + key_bytes)
-hash_digest = hash_object.digest()
-if hash_digest == received_hash:
-    conn.send("Integrity verified.".encode())
-else:
-    conn.send("The received message has lost its integrity.".encode())
-
-# Đóng kết nối
-conn.close()
-s.close()
+try:
+    print("Client address:",addr)
+    while True:
+        data_client = conn.recv(1024).decode(FORMAT)
+        print("Nhan tu client: ",data_client)
+        if data_client == "quit" : break
+        data = input("Server gui toi client: ")
+        conn.sendall(data.encode(FORMAT))
+finally:
+    s.close()
+# Ninh Chí Hướng _ B20DCAT094

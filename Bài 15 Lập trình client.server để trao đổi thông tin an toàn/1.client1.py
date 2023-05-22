@@ -1,29 +1,24 @@
-# Ninh chí hướng _ B20DCAT094
 import socket
 import hashlib
+HOST = "127.0.0.1"
+SERVER_PORT = 65432
+FORMAT = "utf8"
 
-key = "mysecretkey"
 
-# Kết nối tới server
-s = socket.socket()
-host = socket.gethostname()
-port = 12345
-s.connect((host, port))
+client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-# Gửi thông điệp kèm mã băm
-message = input("Nhap thong diep: ")
-message_bytes = message.encode()
-key_bytes = key.encode()
-hash_object = hashlib.md5(message_bytes + key_bytes)
-hash_digest = hash_object.digest()
-s.send(message_bytes + hash_digest)
+print("ClINET SIDE")
+client.connect((HOST,SERVER_PORT))
+try:
+    while True:
+        data = input("Clinet gui toi Server: ")
+        client.sendall(data.encode(FORMAT))
 
-# Nhận phản hồi từ server
-response = s.recv(1024).decode()
-if response == "Integrity verified.":
-    print("Server response:", response)
-else:
-    print("The received message has lost its integrity.")
+        if data == "quit" :break
 
-# Đóng kết nối
-s.close()
+        data_server = client.recv(1024).decode(FORMAT)
+        print("Nhan tu Server : ",data_server)
+finally:
+    client.close()
+
+# Ninh chí hướng _ B20DCAT094    
