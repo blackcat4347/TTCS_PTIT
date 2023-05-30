@@ -12,16 +12,20 @@ Cụ thể, môn học này sẽ giúp sinh viên đạt được các kết qu�
 II. Mục tiêu và nội dung chi tiết
 
 1. Rèn luyện kỹ năng quản trị hệ thống
+
 1.1 Mục đích, yêu cầu
 - Thành thạo việc cài đặt và quản trị hệ điều hành và các dịch vụ cơ bản của hệ điều hành (Windows/Linux)
+
 1.2 Nội dung
 - Cài đặt, cấu hình Windows 8, Windows 10, 11
 - Cài đặt, cấu hình Windows Server 2012/2019 (kèm các dịch vụ)
 - Cài đặt, cấu hình Ubuntu desktop, Ubuntu server, CentOS server (kèm các dịch vụ)
 
 2. Rèn luyện kỹ năng cài đặt triển khai các công nghệ/kỹ thuật An toàn phổ biến
+
 2.1 Mục đích, yêu cầu
 - Thành thạo việc cài đặt và triển khai ứng dụng các công nghệ An toàn thông tin phổ biến
+
 2.2 Nội dung
 - Cài đặt, cấu hình Firewall
 - Cài đặt, triển khai IDS (host-based và network-based)
@@ -32,12 +36,13 @@ windows policy), phần mềm diệt virus/malware, ...
 - Cài đặt, triển khai các công cụ mã hóa để đảm bảo an toàn dữ liệu
 
 3. Rèn luyện kỹ năng nâng cao: khắc phục sự cố, rà quét phát hiện lỗ hổng
-5.1 Mục đích, yêu cầu
+
+3.1 Mục đích, yêu cầu
 
 - Sử dụng thành thạo một số công cụ cơ bản khắc phục sự cố
 - Biết cách sử dụng một số công cụ cho rà quét, phân tích điểm yếu, lỗ hổng,
 
-6.2 Nội dung
+3.2 Nội dung
 - Tạo và sử dụng đĩa/usb khởi động cho khắc phục lỗi và rà quét mã độc
 - Khắc phục sự cố (không khởi động được, xử lý khi máy bị nhiễm virus)
 - Cài đặt và cấu hình các công cụ rà quét mã độc
@@ -51,9 +56,11 @@ cho mạng, hoặc IDS cho mạng, có các server DNS, DHCP, FTP, máy tính b�
 - Phân tích tấn công dùng wireshark
 
 4. Rèn luyện kỹ năng lập trình
+
 4.1 Mục đích, yêu cầu
 - Sử dụng thành thạo các kỹ thuật lập trình để giải quyết các bài toán cụ thể
 - Các nền tảng ngôn ngữ lập trình gồm: C/C++, Java, Python
+
 4.2 Nội dung
 - Lập trình client/ server để trao đổi thông điệp
 - Lập trình client/server để trao đổi khóa đơn giản
